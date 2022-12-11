@@ -51,7 +51,8 @@ def createTable() -> None:
         print(e)
     finally:
         # will happen any way after try termination or exception handling
-        conn.close()
+        if conn is not None:
+            conn.close()
 
 
 def getUsers(printSchema) -> ResultSet:
@@ -74,7 +75,8 @@ def getUsers(printSchema) -> ResultSet:
     except Exception as e:
         print(e)
     finally:
-        conn.close()
+        if conn is not None:
+            conn.close()
         return result
 
 
@@ -98,7 +100,8 @@ def addUser(ID: int, name: str) -> ReturnValue:
     except Exception as e:
         print(e)
     finally:
-        conn.close()
+        if conn is not None:
+            conn.close()
         return ReturnValue.OK
 
 
@@ -122,7 +125,8 @@ def deleteUser(ID: int) -> int:
     except Exception as e:
         print(e)
     finally:
-        conn.close()
+        if conn is not None:
+            conn.close()
         return rows_effected
 
 

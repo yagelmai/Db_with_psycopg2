@@ -1,8 +1,7 @@
 class Critic:
-    def __init__(self,critic_id=None, critic_name=None):
+    def __init__(self, critic_id=None, critic_name=None):
         self.__id = critic_id
         self.__name = critic_name
-
 
     def getName(self):
         return self.__name
@@ -25,4 +24,3 @@ class Critic:
 
     def __str__(self):
         print("CriticName=" + str(self.__name) + ", CriticID=" + str(self.__id))
-

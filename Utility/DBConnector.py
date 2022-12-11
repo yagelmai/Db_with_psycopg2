@@ -74,6 +74,7 @@ class DBConnector:
             self.connection.autocommit = False
             self.cursor = self.connection.cursor()
         except Exception as e:
+            print(e)
             self.connection = None
             self.cursor = None
             raise DatabaseException.ConnectionInvalid("Could not connect to database")
